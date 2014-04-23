@@ -1,0 +1,27 @@
+//= require normalize
+//= require_tree ./application
+//= require_self
+
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+// apply a natural box layout model to all elements
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+html                                  { overflow: hidden;
+}
+
+body                                  { -webkit-font-smoothing: antialiased;
+}
+
+.app-layout                           { position: fixed;
+                                        top: 0; bottom: 0; left: 0; right: 0;
+}
+
+.app-wizzard                          { position: absolute;
+                                        top: 60px; bottom: 0; left: 0; right: 0;
+                                        background: #aaa;
+}
+
+.hidden                               { display: none;
+}

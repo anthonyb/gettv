@@ -1,0 +1,27 @@
+.app-header                           { position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        right: 0;
+                                        height: 200px;
+  .logo                               { background: url(http://placehold.it/960x300&text=logo) no-repeat center center;
+  }
+  .logo, a                            { display: block;
+                                        width: 14.28%;
+                                        height: 60px;
+                                        border: 1px solid #d1d1d1;
+                                        border-left: none;
+                                        float: left;
+                                        text-align: center;
+                                        background-color: #ddd;
+                                        line-height: 60px;
+                                        text-transform: uppercase;
+                                        text-decoration: none;
+                                        color: #444;
+    &:last-child                      { border-right: none;
+    }
+
+    &.current                         { background-color: #333;
+                                        color: #fff;
+    }
+  }
+}

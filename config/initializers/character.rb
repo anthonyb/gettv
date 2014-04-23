@@ -1,3 +1,3 @@
 Character.configure do |config|
-  config.title = 'Get TV | Admin'
+  config.title = 'getTV | Admin'
 end

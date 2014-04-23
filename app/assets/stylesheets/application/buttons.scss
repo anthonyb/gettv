@@ -1,0 +1,11 @@
+.buttons                              { text-align: center;
+                                        position: absolute;
+                                        top: 50%;
+                                        width: 100%;
+                                        margin-top: -60px;
+  button                              { width: 200px;
+                                        height: 60px;
+    &:first-child                     { margin-right: 20px;
+    }
+  }
+}
