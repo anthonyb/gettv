@@ -16,4 +16,4 @@ content.addEventListener('touchmove', function(event){
         event.stopPropagation();
     else
         event.preventDefault();
-    });
+});
