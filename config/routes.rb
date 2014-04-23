@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+mount_character_instance 'admin'
+mount_posts_at '/'
+mount_pages_at '/'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
