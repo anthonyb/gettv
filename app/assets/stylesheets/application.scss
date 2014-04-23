@@ -25,3 +25,10 @@ body                                  { -webkit-font-smoothing: antialiased;
 
 .hidden                               { display: none;
 }
+
+.next-screen                          { cursor: pointer;
+}
+
+li.selected img,
+button.selected                       { border: 2px solid #444;
+}

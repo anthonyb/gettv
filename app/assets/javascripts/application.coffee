@@ -13,10 +13,24 @@ $ ->
   showScreen = (idx) ->
     $('#app_wizzard .app-screen').addClass 'hidden'
     $("#app_wizzard .app-screen:eq(#{idx})").removeClass 'hidden'
+    $("#nav a:eq(#{idx})").removeClass 'locked'
 
   $('#nav a').on 'click', (e) ->
-    idx = $('#nav a').index(@)
-    showScreen(idx)
-    $('#nav a').removeClass 'current'
-    $(@).addClass 'current'
+    if not $(@).hasClass 'locked'
+      idx = $('#nav a').index(@)
+      showScreen(idx)
+      $('#nav a').removeClass 'current'
+      $(@).addClass 'current'
     e.preventDefault()
+
+  nextScreen = ->
+    btn =  $("#nav a.current")
+    srn = $('#app_wizzard .app-screen:visible')
+
+    btn.removeClass('current').next().addClass('current').removeClass('locked')
+    srn.addClass('hidden').next().removeClass('hidden')
+
+  $('.next-screen').on 'click', (e) ->
+    $(@).parent().find('.selected').removeClass('selected')
+    $(@).addClass('selected')
+    nextScreen()

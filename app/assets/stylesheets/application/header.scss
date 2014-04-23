@@ -23,5 +23,7 @@
     &.current                         { background-color: #333;
                                         color: #fff;
     }
+    &.locked                          { color: #888;
+    }
   }
 }
