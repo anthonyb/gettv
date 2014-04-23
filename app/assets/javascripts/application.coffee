@@ -1,6 +1,7 @@
 #= require jquery
 #= require jquery_ujs
 #= require fastclick
+#= require share
 #= require no_bounce
 
 $ ->
@@ -34,3 +35,5 @@ $ ->
     $(@).parent().find('.selected').removeClass('selected')
     $(@).addClass('selected')
     nextScreen()
+
+  new Share('.share')
