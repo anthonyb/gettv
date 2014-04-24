@@ -8,4 +8,7 @@ class Answer
 
   # relations
   belongs_to :question
+
+  # uploader
+  mount_uploader :image, AnswerImageUploader
 end
