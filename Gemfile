@@ -25,5 +25,4 @@ gem 'spring', group: :development
 # ORM + Character
 gem 'mongoid',             github: 'mongoid/mongoid'
 gem 'carrierwave-mongoid', github: 'carrierwaveuploader/carrierwave-mongoid', require: 'carrierwave/mongoid'
-gem 'mongoid-grid_fs',     github: 'ahoward/mongoid-grid_fs'
 gem 'character',           github: 'slate-studio/character'

@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/ahoward/mongoid-grid_fs.git
-  revision: 4dbecf14dce0a221888e2f8883c6cfce3c481647
-  specs:
-    mongoid-grid_fs (2.1.0)
-      mime-types (>= 1.0, < 3.0)
-      mongoid (>= 3.0, < 5.0)
-
-GIT
   remote: git://github.com/carrierwaveuploader/carrierwave-mongoid.git
   revision: 4b147da1e554216bd24926458bda799c2b71d991
   specs:
@@ -160,6 +152,9 @@ GEM
     minitest (5.3.3)
     momentjs-rails (2.5.1)
       railties (>= 3.1)
+    mongoid-grid_fs (2.1.0)
+      mime-types (>= 1.0, < 3.0)
+      mongoid (>= 3.0, < 5.0)
     mongoid_search (0.3.2)
       fast-stemmer (~> 1.0.0)
       mongoid (>= 3.0.0)
@@ -252,7 +247,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   mongoid!
-  mongoid-grid_fs!
   rails (= 4.1.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
