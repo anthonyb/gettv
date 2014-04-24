@@ -24,6 +24,9 @@ gem 'spring', group: :development
 
 # ORM + Character
 gem 'mongoid',             github: 'mongoid/mongoid'
-gem 'carrierwave-mongoid', github: 'carrierwaveuploader/carrierwave-mongoid', require: 'carrierwave/mongoid'
 gem 'character',           github: 'slate-studio/character'
+
+# File Uploads
+gem 'carrierwave-mongoid', github: 'carrierwaveuploader/carrierwave-mongoid', require: 'carrierwave/mongoid'
+gem 'carrierwave-meta'
 gem 'fog'

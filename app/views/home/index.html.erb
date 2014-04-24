@@ -24,62 +24,21 @@
         <button class='next-screen'>Female</button>
       </div>
     </div>
+
+    <% @questions.all.each do |q| %>
     <div class='app-screen question hidden'>
-      <h2>What is the color of your eyes?</h2>
+      <h2><%= q.title %></h2>
       <ul class='choices'>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_1'><strong>choice_1</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_2'><strong>choice_2</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_3'><strong>choice_3</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_4'><strong>choice_4</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_5'><strong>choice_5</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_6'><strong>choice_6</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_7'><strong>choice_7</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_8'><strong>choice_8</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_9'><strong>choice_9</strong></li>
+        <% q.answers.all.each do |a| %>
+        <li class='next-screen' data-id='<%= a.id %>'>
+          <%= image_tag a.image.grid.url, alt: a.title %>
+          <strong><%= a.title %></strong>
+        </li>
+        <% end %>
       </ul>
     </div>
-    <div class='app-screen question hidden'>
-      <h2>What is the color of your car?</h2>
-      <ul class='choices'>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_1'><strong>choice_1</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_2'><strong>choice_2</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_3'><strong>choice_3</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_4'><strong>choice_4</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_5'><strong>choice_5</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_6'><strong>choice_6</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_7'><strong>choice_7</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_8'><strong>choice_8</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_9'><strong>choice_9</strong></li>
-      </ul>
-    </div>
-    <div class='app-screen question hidden'>
-      <h2>What is the color of your house?</h2>
-      <ul class='choices'>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_1'><strong>choice_1</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_2'><strong>choice_2</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_3'><strong>choice_3</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_4'><strong>choice_4</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_5'><strong>choice_5</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_6'><strong>choice_6</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_7'><strong>choice_7</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_8'><strong>choice_8</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_9'><strong>choice_9</strong></li>
-      </ul>
-    </div>
-    <div class='app-screen question hidden'>
-      <h2>What is the color of your wife?</h2>
-      <ul class='choices'>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_1'><strong>choice_1</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_2'><strong>choice_2</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_3'><strong>choice_3</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_4'><strong>choice_4</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_5'><strong>choice_5</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_6'><strong>choice_6</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_7'><strong>choice_7</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_8'><strong>choice_8</strong></li>
-        <li class='next-screen'><img src='http://placehold.it/800x480&text=choice_9'><strong>choice_9</strong></li>
-      </ul>
-    </div>
+    <% end %>
+
     <div class='app-screen result hidden'>
       <div class='character'></div>
       <div class='details'>
