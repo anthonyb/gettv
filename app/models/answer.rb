@@ -8,6 +8,7 @@ class Answer
 
   # relations
   belongs_to :question
+  has_and_belongs_to_many :result
 
   # uploader
   mount_uploader :image, AnswerImageUploader

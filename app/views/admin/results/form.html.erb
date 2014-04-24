@@ -1,0 +1,12 @@
+<div class='chr-form-small'>
+  <%= simple_form_for @object, url: @form_action_url, method: :post do |f| %>
+    <%= f.input :female_title %>
+    <%= f.input :male_title %>
+    <%= f.input :female_description, as: :text, input_html: { rows: 5 } %>
+    <%= f.input :male_description, as: :text, input_html: { rows: 5 } %>
+
+    <% Question.all.each do |q| %>
+      <%= f.association :answers, as: :check_boxes, collection: q.answers.all, label: q.title %>
+    <% end %>
+  <% end %>
+</div>

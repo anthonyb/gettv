@@ -1,3 +1,25 @@
 @import "character";
 @import "character/_posts"; // <!-- should be changed to apply custom post styles
 @import "character/_pages"; // <!-- should be changed to apply custom page styles
+
+.character .chr-form-small form       { max-width: 900px;
+}
+.result_female_description,
+.result_female_title                  { float: right;
+                                        width: 48%;
+}
+.result_male_description,
+.result_male_title                    { width: 48%;
+}
+.result_answers                       { width: 25%;
+                                        float: left;
+  & > label                           { font-weight: 600;
+                                        display: block;
+                                        color: #a1a7b2;
+                                        margin-bottom: 10px;
+  }
+  .checkbox                           { display: block;
+    input                             { margin-bottom: 10px;
+    }
+  }
+}

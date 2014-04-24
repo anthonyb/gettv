@@ -19,9 +19,9 @@ GIT
 
 GIT
   remote: git://github.com/slate-studio/character.git
-  revision: 2b90f0feb13de2c909019fbb55195f49630fb7d2
+  revision: 259afb8028828c365598b172e611a2079b4d343b
   specs:
-    character (0.9.8.25)
+    character (0.9.8.26)
       browserid-auth-rails (~> 0.5.7)
       character_editor
       compass-rails

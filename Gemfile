@@ -23,8 +23,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
 
 # ORM + Character
-gem 'mongoid',             github: 'mongoid/mongoid'
-gem 'character',           github: 'slate-studio/character'
+gem 'mongoid',   github: 'mongoid/mongoid'
+gem 'character', github: 'slate-studio/character'
+#gem 'character', path: '../character'
 
 # File Uploads
 gem 'carrierwave-mongoid', github: 'carrierwaveuploader/carrierwave-mongoid', require: 'carrierwave/mongoid'

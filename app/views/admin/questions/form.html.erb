@@ -5,13 +5,11 @@
     <p><b>Answers</b></p>
     <div class='chr-form-nested chr-form-nested-images sortable-list'>
       <%= f.fields_for :answers do |ff| %>
-        <%#= ff.link_to_remove "Remove" %>
         <%= image_tag ff.object.image.small.url %>
         <%= ff.input :title, placeholder: 'Answer title' %>
         <%= ff.input :image %>
         <%= ff.input :_position, as: :hidden %>
       <% end %>
-      <%#= f.link_to_add "Add an Answer", :answers %>
     </div>
 
   <% end %>
