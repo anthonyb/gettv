@@ -1,9 +1,13 @@
 #= require jquery
 #= require jquery_ujs
+#= require jquery.form
 #= require underscore
+#= require underscore.string
 #= require fastclick
 #= require share
 #= require no_bounce
+
+_.mixin(_.str.exports())
 
 $ ->
   # fast click on touch devices
@@ -64,4 +68,14 @@ $ ->
         if _.intersection(all, ids).length == 4
           characterId = cid
 
-    $(".character[data-id=#{ characterId }]").removeClass('hidden')
+    characterEl = $(".character[data-id=#{ characterId }]").removeClass('hidden')
+    title   = characterEl.find('h1:visible').html()
+    characterEl.find('#webmaster_message_subject').val(title)
+    answers = _.map($('.next-screen.selected[data-id]'), (el) -> _.trim($(el).text()) )
+    characterEl.find('#webmaster_message_message').val(answers.join('\n'))
+
+  # subscription form
+
+  $('.new_webmaster_message').ajaxForm
+    success: (responseText, statusText, xhr, $form) ->
+      $form.hide().next().removeClass('hidden')

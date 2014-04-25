@@ -1,4 +1,5 @@
 #= require character
+#= require webmaster/character
 
 # ---------------------------------------------------------
 # QUESTIONS
@@ -24,6 +25,8 @@
     @ui.reorderableItems.sortable('destroy')
 
 # Modules =================================================
+
+chr.messagesModule()
 
 chr.genericModule 'Question',
   menuIcon:       'question'

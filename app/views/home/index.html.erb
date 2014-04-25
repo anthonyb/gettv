@@ -53,8 +53,13 @@
 
           <div class='subscription'>
             <h4 style='margin-bottom: 10px;'>Join Newsletter</h4>
-            <input type='email' placeholder='Email' style='width: 260px;'>
-            <input type='submit' value='Submit'>
+            <%= simple_form_for Webmaster::Message.new(subject: '', message: '') do |f| %>
+              <%= f.input :message, as: :hidden %>
+              <%= f.input :subject, as: :hidden %>
+              <%= f.input :reply_to, as: :email, label: false, placeholder: 'Your e-mail address' %>
+              <%= f.submit 'Submit', class: 'button' %>
+            <% end %>
+            <div class='subscription-thanks hidden'><p>Thank you!</p></div>
           </div>
         </div>
       </div>

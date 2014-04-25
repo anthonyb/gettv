@@ -15,4 +15,9 @@
                                         border: 1px solid #888;
                                         min-width: 120px;
   }
+  .webmaster_message_reply_to         { margin-right: 10px;
+  }
+  .webmaster_message_reply_to,
+  input[type=submit]                  { float: left;
+  }
 }
