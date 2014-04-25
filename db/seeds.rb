@@ -46,7 +46,7 @@ answers_3 = [ Answer.create({ title: 'Champagne',         image: image_from_file
               Answer.create({ title: 'Red Wine',          image: image_from_file('ct02.jpg') }),
               Answer.create({ title: 'Beer Glass',        image: image_from_file('ct01.jpg') }) ].reverse
 
-question_3 = Question.create(title: 'Coctail?', answers: answers_3)
+question_3 = Question.create(title: 'Cocktail?', answers: answers_3)
 
 # CARS
 
@@ -66,10 +66,14 @@ question_1 = Question.create(title: 'Car?', answers: answers_1)
 
 Result.create({ male_title:   'Detective',
                 female_title: 'Detective',
+                male_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+                female_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
                 answers: answers_1 + answers_3 + answers_2 + answers_4 })
 
 Result.create({ male_title:   'Leading Man',
                 female_title: 'Femme Fatale',
+                male_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+                female_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
                 answers: answers_1.values_at(0,4,5,6) +
                          answers_3.values_at(2,3,4,5,6,7,8) +
                          answers_2 +
@@ -77,6 +81,8 @@ Result.create({ male_title:   'Leading Man',
 
 Result.create({ male_title:   'Cowboy',
                 female_title: 'Kid Sister',
+                male_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+                female_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
                 answers: answers_1.values_at(2,5,8) +
                          answers_3.values_at(0,1,6) +
                          answers_2.values_at(3,7,8) +
@@ -84,6 +90,8 @@ Result.create({ male_title:   'Cowboy',
 
 Result.create({ male_title:   'Playboy',
                 female_title: 'Flapper',
+                male_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+                female_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
                 answers: answers_1.values_at(0,4,5,6,7) +
                          answers_3.values_at(0,1,2,3,4,5,7,8) +
                          answers_2.values_at(2,3,5,7) +
@@ -91,6 +99,8 @@ Result.create({ male_title:   'Playboy',
 
 Result.create({ male_title:   'Mob Boss',
                 female_title: 'Show Girl',
+                male_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+                female_description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
                 answers: answers_1.values_at(0,7) +
                          answers_3.values_at(0,2,3,4,5,6,7,8) +
                          answers_2.values_at(0,1,4,6) +

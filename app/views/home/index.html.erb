@@ -20,12 +20,12 @@
   <section id='app_wizzard' class='app-wizzard hidden'>
     <div class='app-screen gender'>
       <div class='buttons'>
-        <button class='next-screen'>Male</button>
-        <button class='next-screen'>Female</button>
+        <button id='male_choice' class='next-screen'>Male</button>
+        <button id='female_choice' class='next-screen'>Female</button>
       </div>
     </div>
 
-    <% @questions.all.each do |q| %>
+    <% @questions.each do |q| %>
     <div class='app-screen question hidden'>
       <h2><%= q.title %></h2>
       <ul class='choices'>
@@ -40,18 +40,32 @@
     <% end %>
 
     <div class='app-screen result hidden'>
-      <div class='character'></div>
-      <div class='details'>
-        <h1>Bingo!</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+      <% @characters.each do |c| %>
+      <div class='character hidden' data-id='<%= c.id %>'>
+        <div class='photo male hidden'></div>
+        <div class='photo female hidden'></div>
 
-        <div class='subscription'>
-          <h4 style='margin-bottom: 10px;'>Join Newsletter</h4>
-          <input type='email' placeholder='Email' style='width: 260px;'> <input type='submit' value='Submit'>
+        <div class='details'>
+          <h1 class='male hidden'><%= c.male_title %></h1>
+          <h1 class='female hidden'><%= c.female_title %></h1>
+          <p class='male hidden'><%= c.male_description %></p>
+          <p class='female hidden'><%= c.female_description %></p>
+
+          <div class='subscription'>
+            <h4 style='margin-bottom: 10px;'>Join Newsletter</h4>
+            <input type='email' placeholder='Email' style='width: 260px;'>
+            <input type='submit' value='Submit'>
+          </div>
         </div>
-
-        <div class='share' style='margin-top: 30px;'></div>
       </div>
+      <% end %>
     </div>
   </section>
 </div>
+
+<script>
+  window.CHARACTERS = {};
+  <% @characters.each do |c| %>
+  window.CHARACTERS['<%= c.id %>'] = [<%= c.answers.map { |a| "'#{ a.id.to_s }'" }.join(', ').html_safe %>];
+  <% end %>
+</script>

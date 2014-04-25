@@ -23,7 +23,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
 
 # ORM + Character
-gem 'mongoid',   github: 'mongoid/mongoid'
+gem 'mongoid', github: 'mongoid/mongoid'
+gem 'webmaster-rails', git: "https://2e007140573eb4b2604a731eeb2ad8bdf9a9d337:x-oauth-basic@github.com/slate-studio/webmaster-rails.git"
 gem 'character', github: 'slate-studio/character'
 #gem 'character', path: '../character'
 
