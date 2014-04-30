@@ -11,7 +11,11 @@
     </nav>
   </header>
 
-  <section id='app_welcome' class='app-welcome'>
+  <section id='app_loading' class='app-loading'>
+    <div class="loadingpulse"></div>
+  </section>
+
+  <section id='app_welcome' class='app-welcome hidden'>
     <div class='buttons'>
       <button id='start'>Get Started</button>
     </div>
@@ -52,14 +56,18 @@
           <p class='female hidden'><%= c.female_description %></p>
 
           <div class='subscription'>
-            <h4 style='margin-bottom: 10px;'>Join Newsletter</h4>
-            <%= simple_form_for Webmaster::Message.new(subject: '', message: '') do |f| %>
-              <%= f.input :message, as: :hidden %>
-              <%= f.input :subject, as: :hidden %>
-              <%= f.input :reply_to, as: :email, label: false, placeholder: 'Your e-mail address' %>
-              <%= f.submit 'Submit', class: 'button' %>
+            <h4 style='margin-bottom: 10px;'>Stay Connected</h4>
+            <p>Sign up for the getTV newsletter to receive early access and the latest updates including personalized scheduling.</p>
+            <%= simple_form_for Submission.new() do |f| %>
+              <%= f.input :email,          label: 'Email Address' %>
+              <%= f.input :full_name,      label: 'Full Name' %>
+              <%= f.input :zip_code,       label: 'ZIP Code' %>
+              <%= f.input :favorite_genre, label: 'Favorite Classic Movie Genre', collection: @genres %>
+              <%= f.input :character, as: :hidden %>
+              <%= f.input :answers,   as: :hidden %>
+              <%= f.submit 'Sign up', class: 'button' %>
             <% end %>
-            <div class='subscription-thanks hidden'><p>Thank you!</p></div>
+            <div class='subscription-thanks hidden'><p>Thanks for participating! You'll hear more from us soon...stay tuned!</p></div>
           </div>
         </div>
       </div>

@@ -2,7 +2,10 @@
 @import "character/_posts"; // <!-- should be changed to apply custom post styles
 @import "character/_pages"; // <!-- should be changed to apply custom page styles
 
-.character .chr-form-small form       { max-width: 900px;
+.questions .chr-form-small form,
+.submissions .chr-form-small form     { max-width: 520px;
+}
+.characters .chr-form-small form      { max-width: 900px;
 }
 .result_female_description,
 .result_female_title                  { float: right;
@@ -23,9 +26,39 @@
     }
   }
 }
-.webmaster_message_name               { display: none;
-}
-.webmaster_message_message            {
-  textarea                            { height: 82px;
+
+//---------------------------------------------------------
+// GENRES
+//---------------------------------------------------------
+
+.chr-details-content.genres           {
+  .chr-form-large form                { max-width: 520px;
+  }
+  .chr-icon                           { color: #d1d6e0;
+                                        position: absolute;
+                                        margin-top: 21px;
+  }
+  .fa                                 { color: #d1d6e0;
+                                        font-size: 22px;
+                                        padding: 21px 20px 0 0;
+                                        position: absolute;
+  }
+  a:hover .fa,
+  a:hover .chr-icon                   { color: #414d64;
+  }
+  .category                           {
+    input                             { padding-left: 37px;
+                                        padding-right: 37px;
+                                        margin-bottom: 0;
+    }
+  }
+  .action_sort                        { position: relative;
+                                        float: right;
+                                        margin-right: -40px;
+                                        left: -45px;
+                                        padding: 21px 0px;
+                                        cursor: pointer;
+    &:hover                           { color: #414d64;
+    }
   }
 }

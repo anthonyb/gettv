@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/mongoid/mongoid.git
-  revision: 4893e77bb858b4f87d406115129cf8ca9d2c4f36
+  revision: e93a4837b0266db46c24aae172e184f57c847b04
   specs:
     mongoid (4.0.0.beta1)
       activemodel (>= 4.0.0)
@@ -19,9 +19,9 @@ GIT
 
 GIT
   remote: git://github.com/slate-studio/character.git
-  revision: bccbad12c10a2c7fafde6cd2cf021aef969ea7db
+  revision: d6a088d9f8aa56d1e74f1f6209a15591a247dd1c
   specs:
-    character (0.9.8.27)
+    character (0.9.8.30)
       browserid-auth-rails (~> 0.5.7)
       character_editor
       compass-rails
@@ -96,7 +96,7 @@ GEM
       carrierwave (>= 0.5.7)
       mime-types
     character_editor (0.1.2)
-    chunky_png (1.3.0)
+    chunky_png (1.3.1)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -136,7 +136,7 @@ GEM
       net-ssh (>= 2.1.3)
     fog-json (1.0.0)
       multi_json (~> 1.0)
-    font-awesome-rails (4.0.3.1)
+    font-awesome-rails (4.0.3.2)
       railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     fssm (0.2.10)
@@ -182,7 +182,7 @@ GEM
     mini_portile (0.5.3)
     minitest (5.3.3)
     modernizr-rails (2.7.1)
-    momentjs-rails (2.5.1)
+    momentjs-rails (2.6.0)
       railties (>= 3.1)
     mongoid-grid_fs (2.1.0)
       mime-types (>= 1.0, < 3.0)
@@ -197,7 +197,7 @@ GEM
       bson (~> 2.2)
       connection_pool (~> 2.0)
       optionable (~> 0.2.0)
-    multi_json (1.9.2)
+    multi_json (1.9.3)
     multipart-post (2.0.0)
     nested_form (0.3.2)
     net-scp (1.2.0)

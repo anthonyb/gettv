@@ -10,6 +10,11 @@
 _.mixin(_.str.exports())
 
 $ ->
+  # simulate loading proccess
+  # TODO: attache image loading process + logo
+
+  setTimeout(( -> $('#app_loading').addClass('hidden') ; $('#app_welcome').removeClass('hidden') ), 2000)
+
   # fast click on touch devices
 
   FastClick.attach(document.body)
@@ -70,12 +75,12 @@ $ ->
 
     characterEl = $(".character[data-id=#{ characterId }]").removeClass('hidden')
     title   = characterEl.find('h1:visible').html()
-    characterEl.find('#webmaster_message_subject').val(title)
+    characterEl.find('#submission_character').val(title)
     answers = _.map($('.next-screen.selected[data-id]'), (el) -> _.trim($(el).text()) )
-    characterEl.find('#webmaster_message_message').val(answers.join('\n'))
+    characterEl.find('#submission_answers').val(answers.join(', '))
 
   # subscription form
 
-  $('.new_webmaster_message').ajaxForm
+  $('.new_submission').ajaxForm
     success: (responseText, statusText, xhr, $form) ->
       $form.hide().next().removeClass('hidden')

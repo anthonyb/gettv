@@ -1,9 +1,18 @@
 #= require character
-#= require webmaster/character
+#= require ./admin/genres
 
 # Modules =================================================
 
-chr.messagesModule()
+chr.genericModule 'Submission',
+  menuIcon:       'envelope-o'
+  menuTitle:      'Submissions'
+  listItem:
+    titleField:   'full_name'
+    metaField:    'email'
+  listScopes:
+    default:      'full_name:asc'
+  newItems:       false
+  deletable:      false
 
 chr.genericModule 'Question',
   menuIcon:       'question'
@@ -24,11 +33,8 @@ chr.genericModule 'Character',
     metaField:    'updated_ago'
   listReorder:    true
 
-# chr.postsModule()
-# chr.pagesModule()
-
 # Settings Modules ========================================
 
+chr.settingsGenres()
 chr.settingsWebsite()
-# chr.settingsPostCategories()
 chr.settingsAdmins()

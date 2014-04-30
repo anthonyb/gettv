@@ -1,0 +1,10 @@
+<div class='chr-form-small'>
+  <%= simple_form_for @object, url: @form_action_url, method: :post do |f| %>
+    <%= f.input :full_name %>
+    <%= f.input :email %>
+    <%= f.input :zip_code %>
+    <%= f.input :favorite_genre, collection: Genre.all %>
+    <%= f.input :character %>
+    <%= f.input :answers %>
+  <% end %>
+</div>
