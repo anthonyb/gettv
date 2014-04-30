@@ -10,7 +10,8 @@ chr.genericModule 'Submission',
     titleField:   'full_name'
     metaField:    'email'
   listScopes:
-    default:      'full_name:asc'
+    default:
+      orderBy:    'full_name:asc'
   newItems:       false
   deletable:      false
 

@@ -2,12 +2,12 @@
   <header id='app_header' class='app-header hidden'>
     <div class='logo'></div>
     <nav id='nav'>
-      <a href='#1' class='current'>Step 1</a>
-      <a href='#2' class='locked'>Step 2</a>
-      <a href='#3' class='locked'>Step 3</a>
-      <a href='#4' class='locked'>Step 4</a>
-      <a href='#5' class='locked'>Step 5</a>
-      <a href='#6' class='locked'>Step 6</a>
+      <span class='current'>Step 1</span>
+      <span class='locked'>Step 2</span>
+      <span class='locked'>Step 3</span>
+      <span class='locked'>Step 4</span>
+      <span class='locked'>Step 5</span>
+      <span class='locked'>Step 6</span>
     </nav>
   </header>
 
@@ -67,7 +67,10 @@
               <%= f.input :answers,   as: :hidden %>
               <%= f.submit 'Sign up', class: 'button' %>
             <% end %>
-            <div class='subscription-thanks hidden'><p>Thanks for participating! You'll hear more from us soon...stay tuned!</p></div>
+            <div class='subscription-thanks hidden'>
+              <p>Thanks for participating! You'll hear more from us soon...stay tuned!</p>
+              <button class='button restart'>Done</button>
+            </div>
           </div>
         </div>
       </div>

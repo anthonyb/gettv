@@ -27,21 +27,21 @@ $ ->
 
   # navigate wizzard
 
-  showScreen = (idx) ->
-    $('#app_wizzard .app-screen').addClass 'hidden'
-    $("#app_wizzard .app-screen:eq(#{idx})").removeClass 'hidden'
-    $("#nav a:eq(#{idx})").removeClass 'locked'
+  # showScreen = (idx) ->
+  #   $('#app_wizzard .app-screen').addClass 'hidden'
+  #   $("#app_wizzard .app-screen:eq(#{idx})").removeClass 'hidden'
+  #   $("#nav a:eq(#{idx})").removeClass 'locked'
 
-  $('#nav a').on 'click', (e) ->
-    if not $(@).hasClass 'locked'
-      idx = $('#nav a').index(@)
-      showScreen(idx)
-      $('#nav a').removeClass 'current'
-      $(@).addClass 'current'
-    e.preventDefault()
+  # $('#nav a').on 'click', (e) ->
+  #   if not $(@).hasClass 'locked'
+  #     idx = $('#nav a').index(@)
+  #     showScreen(idx)
+  #     $('#nav a').removeClass 'current'
+  #     $(@).addClass 'current'
+  #   e.preventDefault()
 
   nextScreen = ->
-    btn =  $("#nav a.current")
+    btn =  $("#nav .current")
     srn = $('#app_wizzard .app-screen:visible')
 
     btn.removeClass('current').next().addClass('current').removeClass('locked')
@@ -83,4 +83,15 @@ $ ->
 
   $('.new_submission').ajaxForm
     success: (responseText, statusText, xhr, $form) ->
-      $form.hide().next().removeClass('hidden')
+      $form.addClass('hidden').next().removeClass('hidden')
+
+  # restart
+
+  $('.restart').on 'click', (e) ->
+    e.preventDefault()
+    $('#app_header').addClass('hidden').find('#nav span').removeClass('current').first().addClass('current')
+    $('#app_welcome').removeClass('hidden').next().addClass('hidden')
+    $('.app-screen').addClass('hidden').first().removeClass('hidden')
+    $('.subscription-thanks').addClass('hidden').prev().removeClass('hidden')
+    $('.next-screen').removeClass('selected')
+    $('.character').addClass('hidden')

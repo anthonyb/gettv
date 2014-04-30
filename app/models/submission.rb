@@ -15,5 +15,5 @@ class Submission
   validates_presence_of :email, :full_name
 
   # scopes
-  default_scope -> { desc(:created_at) }
+  default_scope -> { asc(:full_name) }
 end
