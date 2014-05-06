@@ -7,31 +7,53 @@
                                         background: image-url('result-bg.png') no-repeat center center;
                                         margin: 0 auto;
   }
-  input                               { line-height: 40px;
-                                        padding: 0 10px;
-                                        border: 1px solid #888;
-                                        min-width: 120px;
+  input.string                        { padding: 10px;
+                                        border: none;
+                                        border-radius: 5px;
+                                        height: 32px;
+                                        width: 100%;
+                                        background-color: #eff0f7;
+                                        box-shadow: inset 0px 1px 2px 0 rgba(0,0,0,0.2);
+  }
+  abbr                                { display: none;
+  }
+  select                              { height: 32px;
+                                        width: 100%;
   }
   .webmaster_message_reply_to         { margin-right: 10px;
   }
   .webmaster_message_reply_to,
   input[type=submit]                  { float: left;
+                                        width: 156px;
+                                        border: 2px solid #fe7c19;
+                                        border-radius: 5px;
+                                        color: #fe7c19;
+                                        font-weight: 600;
+                                        font-size: 20px;
+                                        text-transform: uppercase;
+                                        background: #fff;
+                                        padding: 8px 0 6px;
+                                        line-height: 1;
+                                        margin-top: 14px;
+    &:focus                           { outline: none;
+    }
   }
   .subscription                       { width: 50%;
                                         float: right;
-                                        padding: 16px;
-                                        margin-left: 10px;
+                                        padding: 16px 20px 16px 16px;
+                                        margin-left: 16px;
     & > p                             { font-weight: 12px;
-                                        margin: 0 0 16px;
+                                        margin: 0 0 14px;
     }
   }
   label                               { display: block;
                                         text-transform: uppercase;
                                         font-size: 12px;
                                         font-weight: 600;
+                                        margin-top: 10px;
   }
-  .restart                            { margin: 30px auto 0;
+  .restart                            { margin: 70px auto 0;
                                         display: block;
   }
-  .description                        { padding: 16px; }
+  .description                        { padding: 22px; }
 }
