@@ -6,6 +6,7 @@ class Question
 
   # attributes
   field :title
+  field :tagline
 
   # relations
   has_many :answers

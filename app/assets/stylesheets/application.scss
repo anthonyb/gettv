@@ -9,9 +9,18 @@
 }
 
 html                                  { overflow: hidden;
+                                        font-family: 'proxima-nova', helvetica;
+                                        color: #666;
+                                        font-size: 14px;
+                                        line-height: 1.5;
 }
 
 body                                  { -webkit-font-smoothing: antialiased;
+}
+
+h2                                    { text-transform: uppercase;
+                                        margin: 0;
+                                        font-size: 22px;
 }
 
 .app-layout                           { position: fixed;
@@ -20,7 +29,7 @@ body                                  { -webkit-font-smoothing: antialiased;
 
 .app-wizzard                          { position: absolute;
                                         top: 60px; bottom: 0; left: 0; right: 0;
-                                        background: #aaa;
+                                        background: #e9ebf4;
 }
 
 .hidden                               { display: none;
@@ -31,4 +40,41 @@ body                                  { -webkit-font-smoothing: antialiased;
 
 li.selected img,
 button.selected                       { border: 2px solid #444;
+}
+
+/* WELCOME STEP */
+
+.app-welcome                          { background: #e9ebf4 image-url('background.jpg') no-repeat center center;
+                                        width: 100%; height: 100%;
+  img                                 { width: 203px;
+                                        height: 60px;
+                                        margin: 10px 0 0;
+  }
+  h2                                  {}
+  p                                   { text-align: left; }
+  .buttons                            { width: 534px;
+                                        height: 322px;
+                                        margin-top: -161px;
+                                        margin-left: -267px;
+                                        left: 50%;
+                                        padding: 0 30px;
+  }
+}
+
+/* GENDER */
+
+.app-screen.gender                    {
+  .buttons                            { width: 537px;
+                                        height: 104px;
+                                        background: image-url('male-female-bg.png') no-repeat center center;
+                                        left: 50%;
+                                        margin-top: -52px;
+                                        margin-left: - 268px;
+                                        padding: 18px 0;
+  }
+  h2                                  { position: absolute;
+                                        text-align: center;
+                                        width: 100%;
+                                        margin-top: -64px;
+  }
 }

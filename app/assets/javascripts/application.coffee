@@ -13,7 +13,7 @@ $ ->
   # simulate loading proccess
   # TODO: attache image loading process + logo
 
-  setTimeout(( -> $('#app_loading').addClass('hidden') ; $('#app_welcome').removeClass('hidden') ), 2000)
+  setTimeout(( -> $('#app_loading').addClass('hidden') ; $('#app_welcome').removeClass('hidden') ), 0)
 
   # fast click on touch devices
 

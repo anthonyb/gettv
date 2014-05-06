@@ -1,21 +1,23 @@
 .question                             {
   h2                                  { text-align: center;
-                                        color: #444;
+                                        margin-top: 8px;
   }
 }
 .choices                              { list-style: none;
                                         padding: 0 10px;
-                                        width: 760px;
                                         margin: 0px auto;
 
   li                                  { display: block;
-                                        width: 33.33%;
+                                        width: 322px;
+                                        height: 204px;
                                         float: left;
-                                        padding: 0 10px 10px;
                                         text-align: center;
                                         color: #444;
-    img                               { width: 100%;
-                                        border: 2px solid #aaa;
+                                        background: image-url('answer-bg.png') no-repeat center center;
+                                        margin: 5px;
+    img                               { width: 296px;
+                                        height: 177px;
+                                        margin-top: 12px;
     }
   }
 }

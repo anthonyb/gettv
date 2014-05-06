@@ -2,7 +2,15 @@
 
 .app-loading                          { position: fixed;
                                         top: 0; bottom: 0; left: 0; right: 0;
-                                        background-color: #fa742d;
+                                        background-color: #fd741b;
+  img                                 { position: absolute;
+                                        left: 50%;
+                                        top: 50%;
+                                        margin-left: -101px;
+                                        margin-top: -32px;
+                                        width: 202px;
+                                        height: 65px;
+  }
 }
 
 @mixin keyframes($name)               {
@@ -42,17 +50,17 @@
   animation-fill-mode: forwards; /* this prevents the animation from restarting! */
 }
 
-.loadingpulse                         { width: 24px;
-                                        height: 24px;
+.loadingpulse                         { width: 48px;
+                                        height: 48px;
                                         position: absolute;
                                         left: 50%;
                                         top: 50%;
-                                        margin-top: -12px;
-                                        margin-left: -12px;
+                                        margin-top: 40px;
+                                        margin-left: -24px;
 
   &:before                            { display: block;
-                                        width: 16px;
-                                        height: 16px;
+                                        width: 32px;
+                                        height: 32px;
                                         margin: 4px;
                                         background-color: #fff;
                                         content: "";
@@ -63,7 +71,10 @@
 }
 
 @include keyframes(loadingpulse)      {
+  from                                { opacity: 1;
+                                        @include scale(.5,.5);
+  }
   to                                  { opacity: 0;
-                                        @include scale(2,2);
+                                        @include scale(1,1);
   }
 }

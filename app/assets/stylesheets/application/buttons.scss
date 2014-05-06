@@ -1,11 +1,33 @@
+@import 'mixins';
+
 .buttons                              { text-align: center;
                                         position: absolute;
                                         top: 50%;
                                         width: 100%;
                                         margin-top: -60px;
-  button                              { width: 200px;
-                                        height: 60px;
-    &:first-child                     { margin-right: 20px;
-    }
+}
+
+.btn                                  { height: 52px;
+                                        width: 330px;
+                                        text-transform: uppercase;
+                                        color: #fff;
+                                        text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+                                        border: none;
+                                        border-radius: 10px;
+                                        font-size: 24px;
+                                        font-weight: 600;
+                                        letter-spacing: 0.01rem;
+                                        padding-top: 5px;
+                                        box-shadow: inset 0px 1px 1px 0 rgba(0,0,0,0.2);
+                                        margin: 8px;
+  &:focus                             { outline: none;
+  }
+  &.orange                            { @include gradient(#fe7c19, #f95b25);
+  }
+  &.blue                              { width: 242px;
+                                        @include gradient(#65a1f3, #518ddf);
+  }
+  &.pink                              { width: 242px;
+                                        @include gradient(#f465ac, #e05198);
   }
 }
