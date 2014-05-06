@@ -1,14 +1,11 @@
 .result                               {
-  .photo                              { width: 50%;
-                                        height: 100%;
-                                        position: absolute;
-                                        left: 0;
-                                        background: url(http://placehold.it/500x900) no-repeat center center;
+  .character > h2                     { text-align: center;
+                                        margin-top: 20px;
   }
-  .details                            { position: absolute;
-                                        left: 50%;
-                                        width: 50%;
-                                        padding: 20px 40px;
+  .details                            { width: 661px;
+                                        height: 426px;
+                                        background: image-url('result-bg.png') no-repeat center center;
+                                        margin: 0 auto;
   }
   input                               { line-height: 40px;
                                         padding: 0 10px;
@@ -20,4 +17,21 @@
   .webmaster_message_reply_to,
   input[type=submit]                  { float: left;
   }
+  .subscription                       { width: 50%;
+                                        float: right;
+                                        padding: 16px;
+                                        margin-left: 10px;
+    & > p                             { font-weight: 12px;
+                                        margin: 0 0 16px;
+    }
+  }
+  label                               { display: block;
+                                        text-transform: uppercase;
+                                        font-size: 12px;
+                                        font-weight: 600;
+  }
+  .restart                            { margin: 30px auto 0;
+                                        display: block;
+  }
+  .description                        { padding: 16px; }
 }

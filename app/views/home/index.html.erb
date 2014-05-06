@@ -56,17 +56,13 @@
     <div class='app-screen result hidden'>
       <% @characters.each do |c| %>
       <div class='character hidden' data-id='<%= c.id %>'>
-        <div class='photo male hidden'></div>
-        <div class='photo female hidden'></div>
+
+        <h2 class='male hidden'>You are <%= c.male_title %>!</h2>
+        <h2 class='female hidden'>You are <%= c.female_title %>!</h2>
 
         <div class='details'>
-          <h1 class='male hidden'><%= c.male_title %></h1>
-          <h1 class='female hidden'><%= c.female_title %></h1>
-          <p class='male hidden'><%= c.male_description %></p>
-          <p class='female hidden'><%= c.female_description %></p>
-
           <div class='subscription'>
-            <h4 style='margin-bottom: 10px;'>Stay Connected</h4>
+            <h2>Stay Connected</h2>
             <p>Sign up for the getTV newsletter to receive early access and the latest updates including personalized scheduling.</p>
             <%= simple_form_for Submission.new() do |f| %>
               <%= f.input :email,          label: 'Email Address' %>
@@ -79,12 +75,20 @@
             <% end %>
             <div class='subscription-thanks hidden'>
               <p>Thanks for participating! You'll hear more from us soon...stay tuned!</p>
-              <button class='button restart'>Done</button>
             </div>
           </div>
+
+          <%= image_tag '', class: 'photo male hidden' %>
+          <%= image_tag '', class: 'photo female hidden' %>
+
+          <p class='male hidden description'><%= c.male_description %></p>
+          <p class='female hidden description'><%= c.female_description %></p>
+
         </div>
       </div>
       <% end %>
+
+      <button class='btn orange restart'>Start Over</button>
     </div>
   </section>
 </div>
