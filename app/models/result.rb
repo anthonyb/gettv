@@ -14,6 +14,10 @@ class Result
   has_and_belongs_to_many :answers
   accepts_nested_attributes_for :answers, allow_destroy: false
 
+  # uploader
+  mount_uploader :male_image, ResultImageUploader
+  mount_uploader :female_image, ResultImageUploader
+
   # helpers
   def chr_title
     "#{male_title} / #{female_title}"

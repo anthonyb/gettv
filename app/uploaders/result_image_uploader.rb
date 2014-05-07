@@ -1,9 +1,9 @@
-class AnswerImageUploader < CarrierWave::Uploader::Base
+class ResultImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   include CarrierWave::Meta
 
   def store_dir
-    "uploads/answer_images/#{ model.id }"
+    "uploads/result_images/#{ model.id }"
   end
 
   def default_url
@@ -17,7 +17,7 @@ class AnswerImageUploader < CarrierWave::Uploader::Base
   end
 
   version :grid do
-    process resize_and_pad: [590, 354]
+    process resize_and_pad: [590, 454]
     process :store_meta
   end
 end

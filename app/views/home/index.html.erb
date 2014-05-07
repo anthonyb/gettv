@@ -35,8 +35,8 @@
     <div class='app-screen gender'>
       <div class='buttons'>
         <h2>Please select your gender</h2>
-        <button id='male_choice' class='next-screen btn blue'>Male</button>
-        <button id='female_choice' class='next-screen btn pink'>Female</button>
+        <button id='male_choice' class='next-screen btn blue'><%= image_tag 'icons/сheckmark2x.png', class: 'chkmrk' %>Male</button>
+        <button id='female_choice' class='next-screen btn pink'><%= image_tag 'icons/сheckmark2x.png', class: 'chkmrk' %>Female</button>
       </div>
     </div>
 
@@ -46,7 +46,10 @@
       <ul class='choices'>
         <% q.answers.all.each do |a| %>
         <li class='next-screen' data-id='<%= a.id %>'>
-          <%= image_tag a.image.grid.url, alt: a.title %>
+          <div class='img-holder'>
+            <div class='overflow'><%= image_tag 'icons/сheckmark2x.png', class: 'chkmrk' %></div>
+            <%= image_tag a.image.grid.url, alt: a.title %>
+          </div>
         </li>
         <% end %>
       </ul>
@@ -78,17 +81,21 @@
             </div>
           </div>
 
-          <%= image_tag '', class: 'photo male hidden' %>
-          <%= image_tag '', class: 'photo female hidden' %>
+          <div class='profile male hidden'>
+            <%= image_tag c.male_image.grid.url, class: 'photo' %>
+            <p><%= c.male_description %></p>
+          </div>
 
-          <p class='male hidden description'><%= c.male_description %></p>
-          <p class='female hidden description'><%= c.female_description %></p>
+          <div class='profile female hidden'>
+            <%= image_tag c.female_image.grid.url, class: 'photo' %>
+            <p><%= c.female_description %></p>
+          </div>
 
         </div>
       </div>
       <% end %>
 
-      <button class='btn orange restart'>Start Over</button>
+      <button class='btn orange restart'><%= image_tag 'icons/start-over2x.png' %> Start Over</button>
     </div>
   </section>
 </div>

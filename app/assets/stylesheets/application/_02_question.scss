@@ -5,7 +5,7 @@
 }
 .choices                              { list-style: none;
                                         padding: 0 10px;
-                                        margin: 0px auto;
+                                        margin: 0px 3px;
 
   li                                  { display: block;
                                         width: 322px;
@@ -14,10 +14,28 @@
                                         text-align: center;
                                         color: #444;
                                         background: image-url('answer-bg.png') no-repeat center center;
-                                        margin: 5px;
-    img                               { width: 296px;
+                                        margin: 3px 5px;
+    .img-holder                       { width: 296px;
                                         height: 177px;
-                                        margin-top: 12px;
+                                        overflow: hidden;
+                                        border-radius: 8px;
+                                        margin: 13px;
+    }
+    .overflow                         { box-shadow: inset 0px 0px 10px 0 rgba(0,0,0,0.2);
+                                        width: 296px;
+                                        height: 177px;
+                                        z-index: 2;
+                                        position: absolute;
+                                        border-radius: 8px;
+      img                             { margin-top: 75px;
+      }
+    }
+    .img-holder > img                 { width: 296px;
+                                        height: 177px;
+                                        z-index: 1;
+                                        position: relative;
+    }
+    &.selected .overflow              { background: rgba(0,0,0,.5);
     }
   }
 }

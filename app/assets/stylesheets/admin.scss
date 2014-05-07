@@ -2,15 +2,18 @@
 @import "character/_posts"; // <!-- should be changed to apply custom post styles
 @import "character/_pages"; // <!-- should be changed to apply custom page styles
 
+.female-image img, .male-image img    { width: 100%; margin-bottom: 5px; }
 .questions .chr-form-small form,
 .submissions .chr-form-small form     { max-width: 520px;
 }
 .characters .chr-form-small form      { max-width: 900px;
 }
+.female-image,
 .result_female_description,
 .result_female_title                  { float: right;
                                         width: 48%;
 }
+.male-image,
 .result_male_description,
 .result_male_title                    { width: 48%;
 }
