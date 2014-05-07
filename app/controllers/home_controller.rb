@@ -3,5 +3,6 @@ class HomeController < ApplicationController
     @questions  = Question.all
     @characters = Result.all
     @genres     = Genre.all
+    @answers    = Answer.all
   end
 end

@@ -5,14 +5,18 @@
 #= require underscore.string
 #= require fastclick
 #= require no_bounce
+#= require PxLoader
+#= require PxLoaderImage
 
 _.mixin(_.str.exports())
 
 $ ->
   # simulate loading proccess
-  # TODO: attache image loading process + logo
 
-  setTimeout(( -> $('#app_loading').addClass('hidden') ; $('#app_welcome').removeClass('hidden') ), 0)
+  loader = new PxLoader { statusInterval: 50 }
+  loader.addImage(i) for i in window.PRELOADED_IMAGES
+  loader.addCompletionListener -> $('#app_loading').addClass('hidden') ; $('#app_welcome').removeClass('hidden')
+  setTimeout ( -> loader.start() ), 5
 
   # fast click on touch devices
 

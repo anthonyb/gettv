@@ -65,7 +65,6 @@
 
         <div class='details'>
           <div class='subscription'>
-            <h2>Stay Connected</h2>
             <p>Sign up for the getTV newsletter to receive early access and the latest updates including personalized scheduling.</p>
             <%= simple_form_for Submission.new() do |f| %>
               <%= f.input :email,          label: 'Email Address' %>
@@ -96,7 +95,7 @@
       </div>
       <% end %>
 
-      <button class='btn orange restart'><%= image_tag 'icons/start-over2x.png' %> Start Over</button>
+      <button class='btn orange restart'><%= image_tag 'icons/start-over2x.png' %> Play Again</button>
     </div>
   </section>
 </div>
@@ -106,4 +105,26 @@
   <% @characters.each do |c| %>
   window.CHARACTERS['<%= c.id %>'] = [<%= c.answers.map { |a| "'#{ a.id.to_s }'" }.join(', ').html_safe %>];
   <% end %>
+
+  window.PRELOADED_IMAGES = [];
+  <% @characters.each do |c| %>
+  window.PRELOADED_IMAGES.push('<%= c.male_image.grid.url %>');
+  window.PRELOADED_IMAGES.push('<%= c.female_image.grid.url %>');
+  <% end %>
+  <% @answers.each do |a| %>
+  window.PRELOADED_IMAGES.push('<%= a.image.grid.url %>');
+  <% end %>
+  window.PRELOADED_IMAGES.push("<%= asset_path('icons/start-over2x.png') %>");
+  window.PRELOADED_IMAGES.push("<%= asset_path('icons/сheckmark2x.png') %>");
+  window.PRELOADED_IMAGES.push("<%= asset_path('answer-bg.png') %>");
+  window.PRELOADED_IMAGES.push("<%= asset_path('answer-bg@2x.png') %>");
+  window.PRELOADED_IMAGES.push("<%= asset_path('background.jpg') %>");
+  window.PRELOADED_IMAGES.push("<%= asset_path('background@2x.jpg') %>");
+  window.PRELOADED_IMAGES.push("<%= asset_path('logo-block@2x.png') %>");
+  window.PRELOADED_IMAGES.push("<%= asset_path('male-female-bg.png') %>");
+  window.PRELOADED_IMAGES.push("<%= asset_path('male-female-bg@2x.png') %>");
+  window.PRELOADED_IMAGES.push("<%= asset_path('result-bg.png') %>");
+  window.PRELOADED_IMAGES.push("<%= asset_path('result-bg@2x.png') %>");
+  window.PRELOADED_IMAGES.push("<%= asset_path('start-bg.png') %>");
+  window.PRELOADED_IMAGES.push("<%= asset_path('start-bg@2x.png') %>");
 </script>
