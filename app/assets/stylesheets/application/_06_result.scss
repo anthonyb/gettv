@@ -70,4 +70,11 @@
                                         font-size: 13px;
     }
   }
+
+  .error                              {
+    label                             { color: #d0373a;
+    }
+    input.string                      { background-color: #e8bebe;
+    }
+  }
 }

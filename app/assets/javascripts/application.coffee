@@ -4,7 +4,6 @@
 #= require underscore
 #= require underscore.string
 #= require fastclick
-#= require share
 #= require no_bounce
 
 _.mixin(_.str.exports())
@@ -82,14 +81,27 @@ $ ->
 
   # subscription form
 
+  validateEmail = (email) ->
+    re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    re.test(email)
+
   $('.new_submission').ajaxForm
+    clearForm: true
+    beforeSubmit: (arr, $form, options) ->
+      $email = $form.find('#submission_email')
+      if not validateEmail($email.val())
+        $email.parent().addClass('error')
+        false
     success: (responseText, statusText, xhr, $form) ->
       $form.addClass('hidden').next().removeClass('hidden')
+      $form.find('#submission_email').parent().removeClass('error')
 
   # restart
 
   $('.restart').on 'click', (e) ->
     e.preventDefault()
+    $('.new_submission').clearForm()
+    $('.submission_email.error').removeClass('error')
     $('#app_header').removeClass('result').addClass('hidden').find('#nav span').removeClass('current').first().addClass('current')
     $('#app_welcome').removeClass('hidden').next().addClass('hidden')
     $('.app-screen').addClass('hidden').first().removeClass('hidden')
