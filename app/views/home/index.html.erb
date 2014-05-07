@@ -60,8 +60,8 @@
       <% @characters.each do |c| %>
       <div class='character hidden' data-id='<%= c.id %>'>
 
-        <h2 class='male hidden'>You are <%= c.male_title %>!</h2>
-        <h2 class='female hidden'>You are <%= c.female_title %>!</h2>
+        <h2 class='male hidden'>You are <span class='character-name'><%= c.male_title %></span>!</h2>
+        <h2 class='female hidden'>You are <span class='character-name'><%= c.female_title %></span>!</h2>
 
         <div class='details'>
           <div class='subscription'>

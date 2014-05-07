@@ -73,9 +73,9 @@ $ ->
           characterId = cid
 
     characterEl = $(".character[data-id=#{ characterId }]").removeClass('hidden')
-    title   = characterEl.find('h1:visible').html()
+    title   = characterEl.find('.character-name:visible').html()
     characterEl.find('#submission_character').val(title)
-    answers = _.map($('.next-screen.selected[data-id]'), (el) -> _.trim($(el).text()) )
+    answers = _.map($('.next-screen.selected[data-id] .img-holder > img'), (el) -> _.trim($(el).attr('alt')) )
     characterEl.find('#submission_answers').val(answers.join(', '))
 
   # subscription form
@@ -94,3 +94,4 @@ $ ->
     $('.subscription-thanks').addClass('hidden').prev().removeClass('hidden')
     $('.next-screen').removeClass('selected')
     $('.character').addClass('hidden')
+    $('#nav .step').addClass('locked').first().addClass('current').removeClass('locked')
