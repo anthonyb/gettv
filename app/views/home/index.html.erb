@@ -65,8 +65,9 @@
 
         <div class='details'>
           <div class='subscription'>
-            <p>Sign up for the getTV newsletter to receive early access and the latest updates including personalized scheduling.</p>
             <%= simple_form_for Submission.new() do |f| %>
+              <h2>Stay Connected</h2>
+              <p>Sign up for the getTV newsletter to receive early access and the latest updates including personalized scheduling.</p>
               <%= f.input :email,          label: 'Email Address' %>
               <%= f.input :full_name,      label: 'Full Name' %>
               <%= f.input :zip_code,       label: 'ZIP Code' %>
@@ -77,7 +78,7 @@
               <%= f.submit 'Sign up', class: 'button' %>
             <% end %>
             <div class='subscription-thanks hidden'>
-              <p>Thanks for participating! You'll hear more from us soon...stay tuned!</p>
+              <p>Thanks for participating! You'll hear more from us soon... stay tuned!</p>
             </div>
           </div>
 
