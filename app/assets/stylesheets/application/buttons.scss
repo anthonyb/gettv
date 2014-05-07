@@ -48,3 +48,8 @@
 
 .selected .chkmrk                     { display: inline;
 }
+
+.btn, .button                         {
+  &:hover                             { opacity: .75;
+  }
+}

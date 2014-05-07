@@ -32,11 +32,12 @@ $ ->
     $("#nav .step:eq(#{idx})").removeClass 'locked'
 
   $('#nav .step').on 'click', (e) ->
-    if not $(@).hasClass 'locked'
-      idx = $('#nav .step').index(@)
-      showScreen(idx)
-      $('#nav .step').removeClass 'current'
-      $(@).addClass 'current'
+    if not $('#app_header').hasClass 'result'
+      if not $(@).hasClass 'locked'
+        idx = $('#nav .step').index(@)
+        showScreen(idx)
+        $('#nav .step').removeClass 'current'
+        $(@).addClass 'current'
 
   nextScreen = ->
     btn =  $("#nav .current")
