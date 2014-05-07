@@ -27,18 +27,17 @@ $ ->
 
   # navigate wizzard
 
-  # showScreen = (idx) ->
-  #   $('#app_wizzard .app-screen').addClass 'hidden'
-  #   $("#app_wizzard .app-screen:eq(#{idx})").removeClass 'hidden'
-  #   $("#nav a:eq(#{idx})").removeClass 'locked'
+  showScreen = (idx) ->
+    $('#app_wizzard .app-screen').addClass 'hidden'
+    $("#app_wizzard .app-screen:eq(#{idx})").removeClass 'hidden'
+    $("#nav .step:eq(#{idx})").removeClass 'locked'
 
-  # $('#nav a').on 'click', (e) ->
-  #   if not $(@).hasClass 'locked'
-  #     idx = $('#nav a').index(@)
-  #     showScreen(idx)
-  #     $('#nav a').removeClass 'current'
-  #     $(@).addClass 'current'
-  #   e.preventDefault()
+  $('#nav .step').on 'click', (e) ->
+    if not $(@).hasClass 'locked'
+      idx = $('#nav .step').index(@)
+      showScreen(idx)
+      $('#nav .step').removeClass 'current'
+      $(@).addClass 'current'
 
   nextScreen = ->
     btn =  $("#nav .current")
