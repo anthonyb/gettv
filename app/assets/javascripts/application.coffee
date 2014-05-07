@@ -46,7 +46,9 @@ $ ->
     btn.removeClass('current').next().addClass('current').removeClass('locked')
     srn.addClass('hidden').next().removeClass('hidden')
 
-    pickCharacter() if srn.next().hasClass 'result'
+    if srn.next().hasClass 'result'
+      pickCharacter()
+      $('#app_header').addClass 'result'
 
   $('.next-screen').on 'click', (e) ->
     $(@).parent().find('.selected').removeClass('selected')
@@ -88,7 +90,7 @@ $ ->
 
   $('.restart').on 'click', (e) ->
     e.preventDefault()
-    $('#app_header').addClass('hidden').find('#nav span').removeClass('current').first().addClass('current')
+    $('#app_header').removeClass('result').addClass('hidden').find('#nav span').removeClass('current').first().addClass('current')
     $('#app_welcome').removeClass('hidden').next().addClass('hidden')
     $('.app-screen').addClass('hidden').first().removeClass('hidden')
     $('.subscription-thanks').addClass('hidden').prev().removeClass('hidden')

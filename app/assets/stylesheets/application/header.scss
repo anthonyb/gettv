@@ -85,4 +85,10 @@
     &:before                          { width: 163px; }
     &:after                           { margin-left: 154px; }
   }
+  &.result                            {
+    .step                             { opacity: .5;
+      &:before                        { display: none; }
+      &:after                         { display: none; }
+    }
+  }
 }
