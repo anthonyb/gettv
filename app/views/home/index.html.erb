@@ -74,6 +74,7 @@
               <%= f.input :favorite_genre, label: 'Favorite Classic Movie Genre', collection: @genres %>
               <%= f.input :character, as: :hidden %>
               <%= f.input :answers,   as: :hidden %>
+              <input id="submission_phone" name="submission[phone]" type="phone">
               <%= f.submit 'Sign up', class: 'button' %>
             <% end %>
             <div class='subscription-thanks hidden'>

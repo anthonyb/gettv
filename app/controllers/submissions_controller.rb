@@ -1,10 +1,15 @@
 class SubmissionsController < ApplicationController
   def create
-    @submission = Submission.new resource_params
-    if @submission.save
-      render json: :ok
-    else
-      render json: @submission.errors, status: :unprocessable_entity
+    if params[:submission].has_key?('phone')
+      # honeypot
+      render json: :okay
+    else params[:submission].has_key?('phone')
+      @submission = Submission.new resource_params
+      if @submission.save
+        render json: :ok
+      else
+        render json: @submission.errors, status: :unprocessable_entity
+      end
     end
   end
 
