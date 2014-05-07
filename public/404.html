@@ -1,67 +1,64 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    <meta charset="utf-8">
+    <title>Page Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="//use.typekit.net/xdu1trk.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <style>
 
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+        * {
+            line-height: 1.5;
+            margin: 0;
+        }
 
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+        html {
+            color: #fff;
+            font-family: 'proxima-nova', sans-serif;
+            text-align: center;
+            background-color: #fd741b;
+        }
 
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+        body {
+            left: 50%;
+            margin: -100px 0 0 -150px;
+            position: absolute;
+            top: 50%;
+            width: 300px;
+        }
 
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
+        h1 {
+            color: #fff;
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        p {
+            line-height: 1.2;
+            font-size: .9em;
+        }
+
+        @media only screen and (max-width: 270px) {
+
+            body {
+                margin: 10px auto;
+                position: static;
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+        }
+
+    </style>
 </head>
-
 <body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+    <img style='width:202px; margin-bottom: 20px;' alt="GetTV Logo" src="data:image/png;base64,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" />
+    <h1>404</h1>
+    <p>Sorry, but the page you were trying to view does not exist.</p>
 </body>
 </html>
+<!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx -->
