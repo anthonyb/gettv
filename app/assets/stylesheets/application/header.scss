@@ -15,10 +15,10 @@
   }
   .logo, .step                        { display: block;
                                         height: 60px;
-                                        border-right: 1px solid #cfd0d3;
                                         float: left;
   }
   .step                               { background-color: #f3f4f8;
+                                        border-right: 1px solid #cfd0d3;
                                         width: 160px;
                                         padding-right: 10px;
     .cap                              { position: absolute;
@@ -64,13 +64,12 @@
     &:before                          { position: absolute;
                                         content: '';
                                         height: 4px;
-                                        width: 161px;
+                                        width: 160px;
                                         background-color: #fd741b;
-                                        margin-left: -1px;
     }
   }
   .step.current                       {
-    &:before                          { width: 165px;
+    &:before                          { width: 164px;
     }
     &:after                           { position: absolute;
                                         content: '';
@@ -81,5 +80,9 @@
                                         top: 0;
                                         margin-left: 155px;
     }
+  }
+  .step:first-child                   { border-left: 1px solid #cfd0d3;
+    &:before                          { width: 163px; }
+    &:after                           { margin-left: 154px; }
   }
 }
