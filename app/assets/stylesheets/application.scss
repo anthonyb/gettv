@@ -75,3 +75,16 @@ h2                                    { text-transform: uppercase;
                                         margin-top: -64px;
   }
 }
+
+/* RETINA BACKGROUNDS */
+
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    /* Retina-specific stuff here */
+    .app-welcome                      { background-image: image-url('background@2x.jpg'); background-size: 1024px 748px; }
+    .app-screen.gender .buttons       { background-image: image-url('male-female-bg@2x.png'); background-size: 537px 104px; }
+    .app-welcome .buttons             { background-image: image-url('start-bg@2x.png'); background-size: 537px 326px; }
+    .choices li                       { background-image: image-url('answer-bg@2x.png'); background-size: 322px 204px; }
+    .result .details                  { background-image: image-url('result-bg@2x.png'); background-size: 661px 426px; }
+}
