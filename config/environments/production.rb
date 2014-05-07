@@ -1,5 +1,5 @@
 Rails.application.configure do
-  # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_controller.asset_host = "//#{ ENV['FOG_DIRECTORY'] }.s3.amazonaws.com"
   config.assets.precompile += %w( admin.js admin.css )
   # Settings specified here will take precedence over those in config/application.rb.
 
