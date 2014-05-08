@@ -116,13 +116,13 @@ $ ->
         addFocus($email)
         return false
       if $email.is(':focus')
-        addFocus($helper)
+        addFocus($name)
         return false
       if $name.is(':focus')
-        addFocus($helper)
+        addFocus($zip)
         return false
       if $zip.is(':focus')
-        addFocus($helper)
+        addFocus($gender)
         return false
 
     success: (responseText, statusText, xhr, $form) ->
