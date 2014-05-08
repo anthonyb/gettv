@@ -93,13 +93,38 @@ $ ->
     re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     re.test(email)
 
+  $('.new_submission input[type=submit]').on 'click', (e) -> $(e.currentTarget).parent().submit()
+
+  addFocus = ($input) ->
+    $input.on 'touchstart', (e) ->
+      $(e.currentTarget).focus() if not $(e.currentTarget).is(':focus')
+    $input.trigger('touchstart')
+    $input.off 'touchstart'
+
   $('.new_submission').ajaxForm
     clearForm: true
     beforeSubmit: (arr, $form, options) ->
       $email = $form.find('#submission_email')
-      if not validateEmail($email.val())
+      $name  = $form.find('#submission_full_name')
+      $zip   = $form.find('#submission_zip_code')
+      $genre = $form.find('#submission_favorite_genre')
+      $helper = $form.find('.helper')
+      if validateEmail($email.val())
+        $email.parent().removeClass('error')
+      else
         $email.parent().addClass('error')
-        false
+        addFocus($email)
+        return false
+      if $email.is(':focus')
+        addFocus($helper)
+        return false
+      if $name.is(':focus')
+        addFocus($helper)
+        return false
+      if $zip.is(':focus')
+        addFocus($helper)
+        return false
+
     success: (responseText, statusText, xhr, $form) ->
       $form.addClass('hidden').next().removeClass('hidden')
       $form.find('#submission_email').parent().removeClass('error')

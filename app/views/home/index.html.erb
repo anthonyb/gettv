@@ -25,8 +25,8 @@
   <section id='app_welcome' class='app-welcome hidden'>
     <div class='buttons'>
       <%= image_tag 'logo-block@2x.png' %>
-      <h2>What classic film buff are you?</h2>
-      <p>getTV is a new television network that brings the classic films you love to your living room. Enjoy the glamour of old Hollywood with legendary actors and award-winning films playing all day and night. Answer a few questions to find out which Golden Age movie icon you are.</p>
+      <h2>What Kind of Classic Movie Character Are You?</h2>
+      <!-- <p>getTV is a new television network that brings the classic films you love to your living room. Enjoy the glamour of old Hollywood with legendary actors and award-winning films playing all day and night. Answer a few questions to find out which Golden Age movie icon you are.</p> -->
       <button id='start' class='btn orange'>Get Started</button>
     </div>
   </section>
@@ -65,12 +65,13 @@
 
         <div class='details'>
           <div class='subscription'>
-            <%= simple_form_for Submission.new() do |f| %>
+            <%= simple_form_for Submission.new(), html: { onsubmit: "return false;" } do |f| %>
+              <input class='helper' style='opacity:0; position: absolute;' />
               <h2>Stay Connected</h2>
               <p>Sign up for the getTV newsletter to receive early access and the latest updates including personalized scheduling.</p>
               <%= f.input :email,          label: 'Email Address' %>
               <%= f.input :full_name,      label: 'Full Name' %>
-              <%= f.input :zip_code,       label: 'ZIP Code' %>
+              <%= f.input :zip_code, as: :integer, label: 'ZIP Code', input_html: { pattern: "\d*" } %>
               <%= f.input :favorite_genre, label: 'Favorite Classic Movie Genre', collection: @genres %>
               <%= f.input :character, as: :hidden %>
               <%= f.input :answers,   as: :hidden %>

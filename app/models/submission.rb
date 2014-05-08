@@ -12,7 +12,7 @@ class Submission
   field :answers
 
   # validations
-  validates_presence_of :email
+  validates_presence_of :email #, :full_name, :zip_code, :favorite_genre
 
   # scopes
   default_scope -> { asc(:full_name) }
