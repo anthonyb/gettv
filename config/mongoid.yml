@@ -70,5 +70,4 @@ test:
 production:
   sessions:
     default:
-      database: gettv_ipad_production
-      hosts: <%= "[\"#{ ENV['MONGODB_ADDRESS'] }:27017\"]" %>
+      uri: <%= ENV['MONGODB_URI'] %>
