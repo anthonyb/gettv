@@ -114,14 +114,14 @@ $ ->
       else
         $email.parent().addClass('error')
         addFocus($email)
-        return false
+        #return false
       if $email.is(':focus')
         addFocus($name)
         return false
-      if $name.is(':focus')
+      else if $name.is(':focus')
         addFocus($zip)
         return false
-      if $zip.is(':focus')
+      else if $zip.is(':focus')
         addFocus($gender)
         return false
 
