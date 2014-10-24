@@ -87,7 +87,7 @@ GEM
     browserid-auth-rails (0.5.7)
       jquery-rails
       railties (>= 3.2)
-    bson (2.2.3)
+    bson (2.3.0)
     builder (3.2.2)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -195,7 +195,7 @@ GEM
     mongoid_slug (3.2.1)
       mongoid (> 3.0)
       stringex (~> 2.0)
-    moped (2.0.0.rc1)
+    moped (2.0.1)
       bson (~> 2.2)
       connection_pool (~> 2.0)
       optionable (~> 0.2.0)
